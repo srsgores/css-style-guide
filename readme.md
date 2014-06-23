@@ -7,6 +7,10 @@
 * Colours
 * Sizing and Proportions
 * Type
+* Media Queries
+* Imports
+* Directory Structure
+* Sources
 
 # Layout
 
