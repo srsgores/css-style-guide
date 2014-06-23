@@ -20,7 +20,7 @@ Avoid using floats in most cases.  Floats should be sparingly used.
 Good:
 
 ```
-article > figure.captioned-image {
+article figure.captioned-image {
 	float: right;
 }
 ```
@@ -28,7 +28,7 @@ article > figure.captioned-image {
 Good: 
 
 ```
-nav.sharing-tools > a {
+nav.sharing-tools a {
 	display: inline-block;
 }
 ```
@@ -36,7 +36,7 @@ nav.sharing-tools > a {
 Bad:
 
 ```
-nav.sharing-tools > a {
+nav.sharing-tools a {
 	float: left;
 }
 ```
@@ -175,7 +175,7 @@ Good:
 2. If you decide to use media queries, do not implement more than 2, unless your design requirements mandate it.  
 Adding media queries immensely complicates the maintenance of code.
 3. Avoid overly verbose or device-specific media queries.
-4. Use ``em``, [**ratios**](http://drafts.csswg.org/mediaqueries3/#values), [**resolution**[(http://drafts.csswg.org/mediaqueries3/#resolution), ``dpcm``, or ``dpi`` as units.  **Do not** use ``px``
+4. Use ``em``, [**ratios**](http://drafts.csswg.org/mediaqueries3/#values), [**resolution**](http://drafts.csswg.org/mediaqueries3/#resolution), ``dpcm``, or ``dpi`` as units.  **Do not** use ``px``
 5. Do not resize or change media proportions.  If you want to load different media like images, 
 use the ``<picture>`` element [with a polyfill](https://github.com/scottjehl/picturefill).
 
@@ -205,8 +205,8 @@ Terrible:
 }
 ```
 
-(*Padding, **and** the media query itself are set in fixed, unpredictable ``px`` width, while retina devices may report 
-different proportions in ``dpcm``.  Media query may never trigger.*)
+(Padding, **and** the media query itself are set in fixed, unpredictable ``px`` width, 
+while retina devices may report different proportions in ``dpcm``.  Media query may never trigger.)
 
 Better:
 
@@ -597,7 +597,7 @@ header[role="banner"] > .logo-text {
 Good:
 
 ```
-header[role="banner"] > .logo-text {
+.banner .logo-text {
 	white-space: nowrap;
 	max-width: 50%;
 	overflow-x: hidden;
@@ -706,6 +706,17 @@ Bad:
 ```
 
 (*Comments are confusing and un-associated with rules.  Block comments are used correctly, but the comment "Purpose of the selector or the rule set" is ambiguous and can be omitted.*)
+
+Good:
+
+```
+/* Hardware acceleration hack (http://davidwalsh.name/translate3d) and fallback for unsupported rgba */
+
+%hardware-accelerated {
+	@include transform(translate3d(0, 0, 0));
+	background: #000000;
+}
+```
 
 # Preprocessors
 
