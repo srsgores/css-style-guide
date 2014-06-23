@@ -20,7 +20,7 @@ Avoid using floats in most cases.  Floats should be sparingly used.
 Good:
 
 ```
-article figure.captioned-image {
+article .captioned-image {
 	float: right;
 }
 ```
@@ -535,7 +535,7 @@ p {
 
 Best:
 
-*Don't set ``line-height`` at all, letting it inherit from parent (usually ``body``)*
+*(Don't set ``line-height`` at all, letting it inherit from parent (usually ``body``))*
 
 ### Width on Type
 
@@ -715,6 +715,7 @@ Good:
 %hardware-accelerated {
 	@include transform(translate3d(0, 0, 0));
 	background: #000000;
+	background: rgba(0, 0, 0, 0.5);
 }
 ```
 
@@ -1010,7 +1011,7 @@ Good:
 
 (*``.tags`` nested selector clearly indicates both HTML markup structure as well as reduces repeated code*``)
 
-> **hint**: try [leafo's lessify tool](http://leafo.net/lessphp/lessify/) to convert un-nested, normal CSS, and convert it to nested LESS
+> **Hint**: try [leafo's lessify tool](http://leafo.net/lessphp/lessify/) to convert un-nested, normal CSS, and convert it to nested LESS
 
 # Imports
 
